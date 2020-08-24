@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".MainActivity">
+
+	<WebView
+		android:id="@+id/webView"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<ProgressBar
+		android:id="@+id/progressBar"
+		style="@style/Widget.AppCompat.ProgressBar"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<FrameLayout
+		android:id="@+id/permissionView"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@android:color/white"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent">
+
+			<androidx.appcompat.widget.AppCompatImageView
+				android:id="@+id/cameraImage"
+				android:layout_width="100dp"
+				android:layout_height="100dp"
+				android:layout_marginBottom="30dp"
+				android:src="@drawable/ic_video_camera"
+				app:layout_constraintBottom_toTopOf="@+id/titleText"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintHorizontal_bias="0.5"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintVertical_chainStyle="packed" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/titleText"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="10dp"
+				android:text="CAMERA / FILE"
+				android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+				android:textStyle="bold"
+				app:layout_constraintBottom_toTopOf="@+id/descText"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintHorizontal_bias="0.5"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/cameraImage" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/descText"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="20dp"
+				android:gravity="center_horizontal"
+				android:paddingStart="16dp"
+				android:paddingEnd="16dp"
+				android:text="Please allow CAMERA and FILE permissions to scan QR CODE and select file"
+				app:layout_constraintBottom_toTopOf="@+id/allowButton"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintHorizontal_bias="0.5"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/titleText" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/allowButton"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="ALLOW"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintHorizontal_bias="0.5"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/descText" />
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+	</FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
